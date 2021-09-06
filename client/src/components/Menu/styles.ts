@@ -1,0 +1,168 @@
+import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
+
+export type MenuFullProps = {
+  isOpen: boolean
+}
+
+export const Wrapper = styled.main`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: ${theme.spacings.large} 0;
+
+    position: relative;
+  `}
+`
+
+export const IconWrapper = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.white};
+    cursor: pointer;
+    width: 2.4rem;
+    height: 2.4rem;
+  `}
+`
+
+export const MenuGroup = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    > div {
+      margin-left: ${theme.spacings.xxsmall};
+    }
+  `}
+`
+
+export const LogoWrapper = styled.div`
+  ${media.lessThan('medium')`
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+  `}
+`
+
+export const MenuFull = styled.nav<MenuFullProps>`
+  ${({ isOpen, theme }) => css`
+    opacity: ${isOpen ? '1' : '0'};
+
+    display: flex;
+    flex-direction: column;
+    background: ${theme.colors.white};
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: ${isOpen ? 'all' : 'none'};
+    transition: opacity 0.3s ease-in-out;
+
+    > svg {
+      color: ${theme.colors.black};
+      width: 2.4rem;
+      height: 2.4rem;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: ${theme.spacings.xxsmall};
+      cursor: pointer;
+    }
+
+    ${MenuNav} {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ${MenuLink} {
+      color: ${theme.colors.black};
+      font-weight: ${theme.font.bold};
+      font-size: ${theme.font.sizes.xlarge};
+      margin-bottom: ${theme.spacings.small};
+      transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
+      transition: transform 0.3s ease-in-out;
+    }
+
+    ${RegisterBox} {
+      transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
+      transition: transform 0.3s ease-in-out;
+    }
+  `}
+`
+
+export const MenuNav = styled.div`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+			margin-left: ${theme.spacings.small};
+		`}
+  `}
+`
+
+export const MenuLink = styled.a`
+  ${({ theme }) => css`
+    position: relative;
+    font-size: ${theme.font.sizes.medium};
+    margin: 0.3rem ${theme.spacings.small} 0;
+    color: ${theme.colors.white};
+
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 0.3rem;
+        background-color: ${theme.colors.primary};
+        animation: hoverAnimation 0.2s forwards;
+      }
+
+      @keyframes hoverAnimation {
+        from {
+          width: 0;
+          left: 50%;
+        }
+        to {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  `}
+`
+export const RegisterBox = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    margin: ${theme.spacings.xxsmall} auto;
+
+    > span {
+      font-size: ${theme.font.sizes.xsmall};
+      margin: ${theme.spacings.xxsmall} 0;
+
+      display: block;
+    }
+  `}
+`
+export const CreateAccouunt = styled.a`
+  ${({ theme }) => css`
+    color: ${theme.colors.primary};
+    text-decoration: none;
+    text-align: center;
+
+    border-bottom: 0.2rem solid ${theme.colors.primary};
+  `}
+`

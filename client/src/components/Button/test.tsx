@@ -6,9 +6,7 @@ import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {
-    //const { container } = renderWithTheme(<Button>Buy Now</Button>)
-
-    renderWithTheme(<Button>Buy Now</Button>)
+    const { container } = renderWithTheme(<Button>Buy Now</Button>)
 
     expect(screen.getByRole('button', { name: /Buy Now/i })).toHaveStyle({
       height: '4rem',
@@ -16,7 +14,7 @@ describe('<Button />', () => {
       'font-size': '1.4rem'
     })
 
-    //expect(container.firstChild).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render the small size by default', () => {
@@ -53,5 +51,18 @@ describe('<Button />', () => {
 
     expect(screen.getByText(/Buy Now/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('should render Button as a link', () => {
+    renderWithTheme(
+      <Button as="a" href="/link">
+        Buy now
+      </Button>
+    )
+
+    expect(screen.getByRole('link', { name: /buy now/i })).toHaveAttribute(
+      'href',
+      '/link'
+    )
   })
 })

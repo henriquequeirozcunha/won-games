@@ -18,7 +18,7 @@ describe('<Ribbon />', () => {
     })
   })
 
-  it('should render with primary color on background', () => {
+  it('should render with secondary color on background', () => {
     renderWithTheme(<Ribbon color="secondary">Best Seller</Ribbon>)
 
     expect(screen.getByText(/Best Seller/i)).toHaveStyle({

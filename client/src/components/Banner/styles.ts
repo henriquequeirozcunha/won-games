@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import * as RibbonStyles from 'components/Ribbon/styles'
+import { ImageProps } from 'utils/tests/helpers'
 
 export const Wrapper = styled.main`
   position: relative;
@@ -18,10 +19,6 @@ export const Wrapper = styled.main`
   box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
 `}
 `
-
-type ImageProps = {
-  src: string
-}
 
 export const Image = styled.div<ImageProps>`
   ${({ theme, src }) => css`

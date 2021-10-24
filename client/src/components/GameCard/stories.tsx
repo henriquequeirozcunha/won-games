@@ -9,7 +9,11 @@ export default {
     title: 'Game Title',
     developer: 'Game Developer',
     price: 'R$ 235,00',
-    promotionalPrice: 'R$ 200,00'
+    promotionalPrice: 'R$ 200,00',
+    favorite: false
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
   },
   parameters: {
     backgrounds: {

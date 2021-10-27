@@ -1,0 +1,423 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BannerSlider /> should render the vertical slider 1`] = `
+.c8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: 0;
+  border-radius: 0.4rem;
+  padding: 1.6rem;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 1.6rem 4.8rem;
+}
+
+.c8:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c3 {
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  padding: 0 2.4rem;
+  height: 3.6rem;
+  right: -2rem;
+}
+
+.c3::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-width: 1rem;
+}
+
+.c3::before {
+  border-left-color: #b20b6f;
+  border-top-color: #b20b6f;
+}
+
+.c3::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c4 {
+  background-color: rgba(#EAEAEA);
+  background-image: url(https://source.unsplash.com/user/willianjusten/1042x580);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 23rem;
+}
+
+.c9 {
+  background-color: rgba(#EAEAEA);
+  background-image: url(https://source.unsplash.com/user/willianjusten/1042x582);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 23rem;
+}
+
+.c5 {
+  padding: 1.6rem 2.4rem;
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+}
+
+.c6 {
+  color: #FAFAFA;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.c7 {
+  color: #FAFAFA;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+
+.c7 strong {
+  color: #F231A5;
+  font-weight: 600;
+}
+
+.c0 .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.c0 .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 .slick-list:focus {
+  outline: none;
+}
+
+.c0 .slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.c0 .slick-slider .slick-track,
+.c0 .slick-slider .slick-list {
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.c0 .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.c0 .slick-track:before,
+.c0 .slick-track:after {
+  display: table;
+  content: '';
+}
+
+.c0 .slick-track:after {
+  clear: both;
+}
+
+.c0 .slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.c0 .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.c0 [dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.c0 .slick-slide img {
+  display: block;
+}
+
+.c0 .slick-slide.slick-loading img {
+  display: none;
+}
+
+.c0 .slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.c0 .slick-initialized .slick-slide {
+  display: block;
+}
+
+.c0 .slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.c0 .slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.c0 .slick-arrow.slick-hidden {
+  display: none;
+}
+
+@media (max-width:1170px) {
+  .c1 .c2 {
+    right: 0;
+  }
+
+  .c1 .c2::before {
+    display: none;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    height: 58rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c9 {
+    height: 58rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    font-size: 1.8rem;
+  }
+}
+
+<main
+  class=""
+>
+  <section
+    class="c0"
+  >
+    <div
+      class="slick-slider slick-vertical slick-initialized"
+      dir="ltr"
+    >
+      <div
+        class="slick-list"
+        style="height: 0px;"
+      >
+        <div
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+        >
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <main
+                class="c1"
+              >
+                <div
+                  class="c2 c3"
+                  color="primary"
+                >
+                  Bestselling
+                </div>
+                <div
+                  aria-label="Defy death 1"
+                  class="c4"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x580"
+                />
+                <div
+                  class="c5"
+                >
+                  <h2
+                    class="c6"
+                  >
+                    Defy death 1
+                  </h2>
+                  <h3
+                    class="c7"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="c8"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </main>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <main
+                class="c1"
+              >
+                <div
+                  aria-label="Defy death 2"
+                  class="c9"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x582"
+                />
+                <div
+                  class="c5"
+                >
+                  <h2
+                    class="c6"
+                  >
+                    Defy death 2
+                  </h2>
+                  <h3
+                    class="c7"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="c8"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul
+        class="slick-dots"
+        style="display: block;"
+      >
+        <li
+          class="slick-active"
+        >
+          <button>
+            1
+          </button>
+        </li>
+        <li
+          class=""
+        >
+          <button>
+            2
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+`;

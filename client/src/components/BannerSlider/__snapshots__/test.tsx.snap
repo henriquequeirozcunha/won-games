@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<BannerSlider /> should render the vertical slider 1`] = `
-.c8 {
+.c10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -28,11 +28,11 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   padding: 1.6rem 4.8rem;
 }
 
-.c8:hover {
+.c10:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-.c3 {
+.c5 {
   position: absolute;
   top: 1.6rem;
   display: -webkit-box;
@@ -52,7 +52,7 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   right: -2rem;
 }
 
-.c3::before {
+.c5::before {
   content: '';
   position: absolute;
   right: 0;
@@ -63,22 +63,22 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   border-bottom-width: 1rem;
 }
 
-.c3::before {
+.c5::before {
   border-left-color: #b20b6f;
   border-top-color: #b20b6f;
 }
 
-.c3::before {
+.c5::before {
   top: 3.6rem;
   border-top-width: 1rem;
   border-right-width: 2rem;
 }
 
-.c1 {
+.c3 {
   position: relative;
 }
 
-.c4 {
+.c6 {
   background-color: rgba(#EAEAEA);
   background-image: url(https://source.unsplash.com/user/willianjusten/1042x580);
   background-position: center;
@@ -87,7 +87,7 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   height: 23rem;
 }
 
-.c9 {
+.c11 {
   background-color: rgba(#EAEAEA);
   background-image: url(https://source.unsplash.com/user/willianjusten/1042x582);
   background-position: center;
@@ -96,31 +96,31 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   height: 23rem;
 }
 
-.c5 {
+.c7 {
   padding: 1.6rem 2.4rem;
   background-color: rgba(0,0,0,0.7);
   width: 100%;
 }
 
-.c6 {
+.c8 {
   color: #FAFAFA;
   font-weight: 600;
   font-size: 1.8rem;
 }
 
-.c7 {
+.c9 {
   color: #FAFAFA;
   font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 1.6rem;
 }
 
-.c7 strong {
+.c9 strong {
   color: #F231A5;
   font-weight: 600;
 }
 
-.c0 .slick-slider {
+.c1 .slick-slider {
   position: relative;
   display: block;
   box-sizing: border-box;
@@ -138,7 +138,7 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   -webkit-tap-highlight-color: transparent;
 }
 
-.c0 .slick-list {
+.c1 .slick-list {
   position: relative;
   display: block;
   overflow: hidden;
@@ -146,17 +146,17 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   padding: 0;
 }
 
-.c0 .slick-list:focus {
+.c1 .slick-list:focus {
   outline: none;
 }
 
-.c0 .slick-list.dragging {
+.c1 .slick-list.dragging {
   cursor: pointer;
   cursor: hand;
 }
 
-.c0 .slick-slider .slick-track,
-.c0 .slick-slider .slick-list {
+.c1 .slick-slider .slick-track,
+.c1 .slick-slider .slick-list {
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -166,98 +166,147 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.c0 .slick-track {
+.c1 .slick-track {
   position: relative;
   top: 0;
   left: 0;
   display: block;
 }
 
-.c0 .slick-track:before,
-.c0 .slick-track:after {
+.c1 .slick-track:before,
+.c1 .slick-track:after {
   display: table;
   content: '';
 }
 
-.c0 .slick-track:after {
+.c1 .slick-track:after {
   clear: both;
 }
 
-.c0 .slick-loading .slick-track {
+.c1 .slick-loading .slick-track {
   visibility: hidden;
 }
 
-.c0 .slick-slide {
+.c1 .slick-slide {
   display: none;
   float: left;
   height: 100%;
   min-height: 1px;
 }
 
-.c0 [dir='rtl'] .slick-slide {
+.c1 [dir='rtl'] .slick-slide {
   float: right;
 }
 
-.c0 .slick-slide img {
+.c1 .slick-slide img {
   display: block;
 }
 
-.c0 .slick-slide.slick-loading img {
+.c1 .slick-slide.slick-loading img {
   display: none;
 }
 
-.c0 .slick-slide.dragging img {
+.c1 .slick-slide.dragging img {
   pointer-events: none;
 }
 
-.c0 .slick-initialized .slick-slide {
+.c1 .slick-initialized .slick-slide {
   display: block;
 }
 
-.c0 .slick-loading .slick-slide {
+.c1 .slick-loading .slick-slide {
   visibility: hidden;
 }
 
-.c0 .slick-vertical .slick-slide {
+.c1 .slick-vertical .slick-slide {
   display: block;
   height: auto;
   border: 1px solid transparent;
 }
 
-.c0 .slick-arrow.slick-hidden {
+.c1 .slick-arrow.slick-hidden {
   display: none;
 }
 
+.c0 .slick-dots {
+  list-style: none;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+.c0 .slick-dots li {
+  background: #FAFAFA;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 0.8rem;
+  cursor: pointer;
+}
+
+.c0 .slick-dots li.slick-active {
+  background: #F231A5;
+}
+
+.c0 .slick-dots button {
+  opacity: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
 @media (max-width:1170px) {
-  .c1 .c2 {
+  .c3 .c4 {
     right: 0;
   }
 
-  .c1 .c2::before {
+  .c3 .c4::before {
     display: none;
   }
 }
 
 @media (min-width:768px) {
-  .c1 {
+  .c3 {
     box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
   }
 }
 
 @media (min-width:768px) {
-  .c4 {
+  .c6 {
     height: 58rem;
   }
 }
 
 @media (min-width:768px) {
-  .c9 {
+  .c11 {
     height: 58rem;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c7 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -265,22 +314,44 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
 }
 
 @media (min-width:768px) {
-  .c6 {
+  .c8 {
     font-size: 2.8rem;
   }
 }
 
 @media (min-width:768px) {
-  .c7 {
+  .c9 {
     font-size: 1.8rem;
   }
 }
 
-<main
-  class=""
+@media (min-width:1170px) {
+  .c0 .c2 {
+    max-width: 104rem;
+    margin: 0 auto;
+  }
+
+  .c0 .slick-dots {
+    position: absolute;
+    right: 0;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    top: 0;
+    margin: 0;
+  }
+
+  .c0 .slick-dots li {
+    margin: 0.8rem 0;
+  }
+}
+
+<section
+  class="c0"
 >
   <section
-    class="c0"
+    class="c1"
   >
     <div
       class="slick-slider slick-vertical slick-initialized"
@@ -303,30 +374,30 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
           >
             <div>
               <main
-                class="c1"
+                class="c2 c3"
               >
                 <div
-                  class="c2 c3"
+                  class="c4 c5"
                   color="primary"
                 >
                   Bestselling
                 </div>
                 <div
                   aria-label="Defy death 1"
-                  class="c4"
+                  class="c6"
                   role="img"
                   src="https://source.unsplash.com/user/willianjusten/1042x580"
                 />
                 <div
-                  class="c5"
+                  class="c7"
                 >
                   <h2
-                    class="c6"
+                    class="c8"
                   >
                     Defy death 1
                   </h2>
                   <h3
-                    class="c7"
+                    class="c9"
                   >
                     <p>
                       Play the new 
@@ -337,7 +408,7 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
                     </p>
                   </h3>
                   <a
-                    class="c8"
+                    class="c10"
                     href="/games/defy-death"
                   >
                     <span>
@@ -357,24 +428,24 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
           >
             <div>
               <main
-                class="c1"
+                class="c2 c3"
               >
                 <div
                   aria-label="Defy death 2"
-                  class="c9"
+                  class="c11"
                   role="img"
                   src="https://source.unsplash.com/user/willianjusten/1042x582"
                 />
                 <div
-                  class="c5"
+                  class="c7"
                 >
                   <h2
-                    class="c6"
+                    class="c8"
                   >
                     Defy death 2
                   </h2>
                   <h3
-                    class="c7"
+                    class="c9"
                   >
                     <p>
                       Play the new 
@@ -385,7 +456,7 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
                     </p>
                   </h3>
                   <a
-                    class="c8"
+                    class="c10"
                     href="/games/defy-death"
                   >
                     <span>
@@ -419,5 +490,5 @@ exports[`<BannerSlider /> should render the vertical slider 1`] = `
       </ul>
     </div>
   </section>
-</main>
+</section>
 `;

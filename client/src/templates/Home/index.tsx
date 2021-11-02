@@ -7,6 +7,7 @@ import GameCardSlider from 'components/GameCardSlider'
 import Heading from 'components/Heading'
 import Highlight, { HighlightProps } from 'components/Highlight'
 import Menu from 'components/Menu'
+import * as S from './styles'
 
 export type HomeTemplateProps = {
   banners: BannerProps[]
@@ -34,47 +35,55 @@ const Home = ({
   <section>
     <Container>
       <Menu />
-      <BannerSlider items={banners} />
+      <S.SectionBannerSlider>
+        <BannerSlider items={banners} />
+      </S.SectionBannerSlider>
     </Container>
+
+    <S.SectionNews>
+      <Container>
+        <Heading lineLeft lineColor="secondary" color="black">
+          News
+        </Heading>
+        <GameCardSlider items={newGames} color="black" />
+      </Container>
+    </S.SectionNews>
 
     <Container>
-      <Heading lineLeft lineColor="secondary" color="black">
-        News
-      </Heading>
-      <GameCardSlider items={newGames} color="black" />
+      <S.SectionMostPopular>
+        <Heading lineLeft lineColor="secondary">
+          Most Popular
+        </Heading>
+
+        <Highlight {...mostPopularHighlight} />
+        <GameCardSlider items={mostPopularGames} />
+      </S.SectionMostPopular>
+
+      <S.SectionUpcoming>
+        <Heading lineLeft lineColor="secondary">
+          Upcomming
+        </Heading>
+
+        <GameCardSlider items={upCommingGames} />
+        <Highlight {...upCommingHilight} />
+        <GameCardSlider items={upCommingMoreGames} />
+      </S.SectionUpcoming>
+
+      <S.SectionFreeGames>
+        <Heading lineLeft lineColor="secondary">
+          Free Games
+        </Heading>
+
+        <Highlight {...freeGameHighlight} />
+        <GameCardSlider items={freeGames} />
+      </S.SectionFreeGames>
     </Container>
 
-    <Container>
-      <Heading lineLeft lineColor="secondary">
-        Most Popular
-      </Heading>
-
-      <Highlight {...mostPopularHighlight} />
-      <GameCardSlider items={mostPopularGames} />
-    </Container>
-
-    <Container>
-      <Heading lineLeft lineColor="secondary">
-        Upcomming
-      </Heading>
-
-      <GameCardSlider items={upCommingGames} />
-      <Highlight {...upCommingHilight} />
-      <GameCardSlider items={upCommingMoreGames} />
-    </Container>
-
-    <Container>
-      <Heading lineLeft lineColor="secondary">
-        Free Games
-      </Heading>
-
-      <Highlight {...freeGameHighlight} />
-      <GameCardSlider items={freeGames} />
-    </Container>
-
-    <Container>
-      <Footer />
-    </Container>
+    <S.SectionFooter>
+      <Container>
+        <Footer />
+      </Container>
+    </S.SectionFooter>
   </section>
 )
 

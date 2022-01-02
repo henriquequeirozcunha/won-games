@@ -37,3 +37,11 @@ asLink.args = {
   as: 'a',
   href: '/link'
 }
+
+export const Minimal: Story<ButtonProps> = (args) => <Button {...args} />
+
+Minimal.args = {
+  children: 'Buy Now',
+  minimal: true,
+  icon: <AddShoppingCart />
+}

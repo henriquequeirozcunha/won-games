@@ -74,4 +74,18 @@ describe('<TextField />', () => {
       order: 1
     })
   })
+
+  it('Render with error', () => {
+    const { container } = renderWithTheme(
+      <TextField
+        label="TextField"
+        labelFor="TextField"
+        id="TextField"
+        error="Error Message"
+      />
+    )
+
+    expect(screen.getByText('Error Message')).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })

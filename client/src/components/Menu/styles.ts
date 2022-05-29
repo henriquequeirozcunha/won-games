@@ -5,14 +5,15 @@ export type MenuFullProps = {
   isOpen: boolean
 }
 
-export const Wrapper = styled.main`
-  ${({ theme }) => css`
+export const Wrapper = styled.menu<MenuFullProps>`
+  ${({ theme, isOpen }) => css`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: ${theme.spacings.large} 0;
 
     position: relative;
+    z-index: ${isOpen ? theme.layers.menu : `calc(${theme.layers.menu} - 1)`};
   `}
 `
 
@@ -31,6 +32,7 @@ export const MenuGroup = styled.div`
     flex-grow: 1;
     justify-content: flex-end;
     align-items: center;
+    z-index: ${theme.layers.menu} + 1;
     > div {
       margin-left: ${theme.spacings.xxsmall};
     }
@@ -53,7 +55,8 @@ export const MenuFull = styled.nav<MenuFullProps>`
     display: flex;
     flex-direction: column;
     background: ${theme.colors.white};
-    position: absolute;
+    position: fixed;
+    z-index: ${theme.layers.menu};
     top: 0;
     bottom: 0;
     left: 0;
@@ -62,6 +65,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     height: 100vh;
     overflow: hidden;
     pointer-events: ${isOpen ? 'all' : 'none'};
+    visibility: ${isOpen ? 'visible' : 'hidden'};
     transition: opacity 0.3s ease-in-out;
 
     > svg {

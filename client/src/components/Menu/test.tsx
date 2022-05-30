@@ -42,15 +42,15 @@ describe('<Menu />', () => {
     expect(screen.getByText(/My account/i)).toBeInTheDocument()
     expect(screen.getByText(/Wishlist/i)).toBeInTheDocument()
 
-    expect(screen.queryByText(/Log in Now/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/Sing Up/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Sign Up/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/Sign in/i)).not.toBeInTheDocument()
   })
 
   it('should handle show/hide buttons depending on username', () => {
     renderWithTheme(<Menu />)
 
-    expect(screen.getByText(/Log in Now/i)).toBeInTheDocument()
-    expect(screen.getByText(/Sing Up/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Sign in/i)).toHaveLength(2)
+    expect(screen.getByText(/Sign Up/i)).toBeInTheDocument()
 
     expect(screen.queryByText(/My account/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/Wishlist/i)).not.toBeInTheDocument()

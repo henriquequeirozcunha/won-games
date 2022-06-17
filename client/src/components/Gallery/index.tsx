@@ -7,7 +7,7 @@ import SlickSlider from 'react-slick'
 import Slider, { SliderSettings } from 'components/Slider'
 import * as S from './styles'
 
-type GalleryImageProps = {
+export type GalleryImageProps = {
   src: string
   label: string
 }

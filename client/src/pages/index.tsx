@@ -14,9 +14,9 @@ export function getStaticProps() {
       newGames: gamesMock,
       mostPopularHighlight: hilightMock,
       mostPopularGames: gamesMock,
-      upCommingGames: gamesMock,
-      upCommingHilight: hilightMock,
-      upCommingMoreGames: gamesMock,
+      upcomingGames: gamesMock,
+      upcomingHilight: hilightMock,
+      upcomingMoreGames: gamesMock,
       freeGameHighlight: hilightMock,
       freeGames: gamesMock
     }

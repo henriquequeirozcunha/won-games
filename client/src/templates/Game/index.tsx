@@ -8,6 +8,7 @@ import { HighlightProps } from 'components/Highlight'
 import Showcase from 'components/Showcase'
 
 import * as S from './styles'
+import { Divider } from 'components/Divider'
 
 export type GameTemplateProps = {
   cover: string
@@ -48,10 +49,11 @@ const Game = ({
 
       <S.SectionGameDetails>
         <GameDetails {...details} />
+        <Divider />
       </S.SectionGameDetails>
 
       <Showcase
-        title="upcoming"
+        title="Upcoming"
         games={upcomingGames}
         highlight={upcomingHighlight}
       />

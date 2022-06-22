@@ -12,7 +12,6 @@ exports[`<ProfileMenu /> should render the menu 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border-bottom: 0.1rem solid #EAEAEA;
 }
 
 .c1 {

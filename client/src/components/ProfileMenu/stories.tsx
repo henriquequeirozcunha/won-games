@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react'
-import ProfileMenu from '.'
+import ProfileMenu, { ProfileMenuProps } from '.'
 
 export default {
   title: 'ProfileMenu',
@@ -11,8 +11,8 @@ export default {
   }
 } as Meta
 
-export const Default: Story = () => (
+export const Default: Story<ProfileMenuProps> = (args) => (
   <div style={{ maxWidth: '100rem', margin: '0 auto' }}>
-    <ProfileMenu />
+    <ProfileMenu {...args} />
   </div>
 )

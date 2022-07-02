@@ -39,7 +39,7 @@ describe('<Menu />', () => {
   it('should show RegisterBox on user is logged', () => {
     renderWithTheme(<Menu username="henrique" />)
 
-    expect(screen.getByText(/My account/i)).toBeInTheDocument()
+    expect(screen.getByText(/My profile/i)).toBeInTheDocument()
     expect(screen.getByText(/Wishlist/i)).toBeInTheDocument()
 
     expect(screen.queryByText(/Sign Up/i)).not.toBeInTheDocument()
@@ -52,7 +52,7 @@ describe('<Menu />', () => {
     expect(screen.getAllByText(/Sign in/i)).toHaveLength(2)
     expect(screen.getByText(/Sign Up/i)).toBeInTheDocument()
 
-    expect(screen.queryByText(/My account/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/My profile/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/Wishlist/i)).not.toBeInTheDocument()
   })
 })

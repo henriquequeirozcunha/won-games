@@ -46,7 +46,7 @@ export const QUERY_HOME = gql`
         }
       }
 
-      upComingGames {
+      upcomingGames {
         title
         highlight {
           ...HighlightFragment

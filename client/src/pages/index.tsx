@@ -10,7 +10,7 @@ export default function Index(props: HomeTemplateProps) {
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
-  const TODAY = new Date().toISOString().slice(0, 10)
+  const TODAY = '2021-01-01' //new Date().toISOString().slice(0, 10)
 
   const {
     data: { banners, newGames, upcomingGames, freeGames, sections }
@@ -28,9 +28,9 @@ export async function getStaticProps() {
       mostPopularGamesTitle: sections?.popularGames?.title,
       mostPopularHighlight: highlightMapper(sections?.popularGames?.highlight),
       mostPopularGames: gamesMapper(sections!.popularGames!.games),
-      upcomingGamesTitle: sections?.upComingGames?.title,
+      upcomingGamesTitle: sections?.upcomingGames?.title,
       upcomingGames: gamesMapper(upcomingGames),
-      upcomingHighlight: highlightMapper(sections?.upComingGames?.highlight),
+      upcomingHighlight: highlightMapper(sections?.upcomingGames?.highlight),
       freeGamesTitle: sections?.freeGames?.title,
       freeGames: gamesMapper(freeGames),
       freeHighlight: highlightMapper(sections?.freeGames?.highlight)

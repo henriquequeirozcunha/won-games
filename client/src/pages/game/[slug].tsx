@@ -1,9 +1,6 @@
 import { useRouter } from 'next/router'
 
 import Game, { GameTemplateProps } from 'templates/Game'
-import galleryMock from 'components/Gallery/mock'
-import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mock'
 import { initializeApollo } from 'utils/tests/apollo'
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from 'graphql/queries/games'
@@ -12,6 +9,14 @@ import {
   QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
 import { GetStaticProps } from 'next'
+import { QueryRecommended } from 'graphql/generated/QueryRecommended'
+import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
+import { gamesMapper, highlightMapper } from 'utils/mappers'
+import { QUERY_UPCOMING } from 'graphql/queries/upcoming'
+import {
+  QueryUpcoming,
+  QueryUpcomingVariables
+} from 'graphql/generated/QueryUpcoming'
 
 const apolloClient = initializeApollo()
 
@@ -55,6 +60,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const game = data.games[0]
 
+  const { data: recommendedSection } =
+    await apolloClient.query<QueryRecommended>({
+      query: QUERY_RECOMMENDED
+    })
+
+  const TODAY = '2021-01-01' //new Date().toISOString().slice(0, 10)
+  const { data: upcoming } = await apolloClient.query<
+    QueryUpcoming,
+    QueryUpcomingVariables
+  >({ query: QUERY_UPCOMING, variables: { date: TODAY } })
+
   return {
     props: {
       revalidate: 60,
@@ -74,9 +90,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         rating: game.rating,
         genres: game.categories.map((category) => category.name)
       },
-      upcomingGames: gamesMock,
-      upcomingHighlight: highlightMock,
-      recommendedGames: gamesMock
+      upcomingTitle: upcoming.showcase?.upcomingGames?.title,
+      upcomingGames: gamesMapper(upcoming.upcomingGames),
+      upcomingHighlight: highlightMapper(
+        upcoming.showcase?.upcomingGames?.highlight
+      ),
+      recommendedTitle: recommendedSection.recommended?.section?.title,
+      recommendedGames: gamesMapper(
+        recommendedSection.recommended?.section?.games
+      )
     }
   }
 }

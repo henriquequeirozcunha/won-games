@@ -5,7 +5,7 @@ import GameInfo from '.'
 
 const props = {
   title: 'Game Title',
-  price: '100.00',
+  price: 100,
   description: 'Game description'
 }
 
@@ -17,7 +17,7 @@ describe('<GameInfo />', () => {
       screen.getByRole('heading', { name: /game title/i })
     ).toBeInTheDocument()
 
-    expect(screen.getByText(/R\$100.00/i)).toBeInTheDocument()
+    expect(screen.getByText(/\$100\.00/)).toBeInTheDocument()
     expect(screen.getByText(/game description/i)).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()

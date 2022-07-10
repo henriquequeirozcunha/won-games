@@ -5,18 +5,23 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import GameCard from '.'
 
 const props = {
+  slug: 'game-title',
   img: '/image',
   title: 'Game Title',
   developer: 'Game Developer',
-  price: 'R$ 235,00'
+  price: 235
 }
 
 describe('<GameCard />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<GameCard {...props} />)
+    const { container } = renderWithTheme(<GameCard {...props} />)
 
     expect(screen.getByRole('img')).toBeInTheDocument()
     expect(screen.getByRole('img')).toHaveAttribute('src', props.img)
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/game/${props.slug}`
+    )
     expect(
       screen.getByRole('heading', { name: 'Game Title' })
     ).toBeInTheDocument()
@@ -24,12 +29,14 @@ describe('<GameCard />', () => {
       screen.getByRole('heading', { name: 'Game Developer' })
     ).toBeInTheDocument()
     expect(screen.getByLabelText(/Add to wishlist/i)).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render GameCard without promotional price', () => {
     renderWithTheme(<GameCard {...props} />)
 
-    const priceElement = screen.getByText('R$ 235,00')
+    const priceElement = screen.getByText('$235.00')
 
     expect(priceElement).toBeInTheDocument()
     expect(priceElement).not.toHaveStyle({
@@ -41,10 +48,10 @@ describe('<GameCard />', () => {
     })
   })
   it('should render GameCard with promotional price', () => {
-    renderWithTheme(<GameCard {...props} promotionalPrice="R$ 200,00" />)
+    renderWithTheme(<GameCard {...props} promotionalPrice={200} />)
 
-    const priceElement = screen.getByText('R$ 235,00')
-    const promotionalPriceElement = screen.getByText('R$ 200,00')
+    const priceElement = screen.getByText('$235.00')
+    const promotionalPriceElement = screen.getByText('$200.00')
 
     expect(promotionalPriceElement).toBeInTheDocument()
     expect(promotionalPriceElement).toHaveStyle({

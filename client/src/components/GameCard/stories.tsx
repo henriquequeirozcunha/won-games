@@ -5,11 +5,12 @@ export default {
   title: 'GameCard',
   component: GameCard,
   args: {
+    slug: 'game-title',
     img: 'https://source.unsplash.com/user/willianjusten/1042x580',
     title: 'Game Title',
     developer: 'Game Developer',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 200,00',
+    price: 235,
+    promotionalPrice: 200,
     favorite: false
   },
   argTypes: {

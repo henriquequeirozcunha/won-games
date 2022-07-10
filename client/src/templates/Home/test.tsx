@@ -12,11 +12,14 @@ import Home from '.'
 const props = {
   banners: bannerMock,
   newGames: [gamesMock[0]],
+  newGamesTitle: 'New Games',
   mostPopularHighlight: highlightMock,
+  mostPopularGamesTitle: 'Popular Games',
   mostPopularGames: [gamesMock[0]],
+  upcomingGamesTitle: 'Upcoming Games',
   upcomingGames: [gamesMock[0]],
   upcomingHilight: highlightMock,
-  upcomingMoreGames: [gamesMock[0]],
+  freeGamesTitle: 'Free Games',
   freeGames: [gamesMock[0]],
   freeGameHighlight: highlightMock
 }
@@ -43,7 +46,7 @@ describe('<Home />', () => {
   it('should render menu and footer', () => {
     renderWithTheme(<Home {...props} />)
 
-    expect(screen.getAllByTestId(/mock showcase/i)).toHaveLength(5)
+    expect(screen.getAllByTestId(/mock showcase/i)).toHaveLength(4)
 
     expect(screen.getByTestId(/mock banner slider/i)).toBeInTheDocument()
   })

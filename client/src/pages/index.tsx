@@ -28,9 +28,9 @@ export async function getStaticProps() {
       mostPopularGamesTitle: sections?.popularGames?.title,
       mostPopularHighlight: highlightMapper(sections?.popularGames?.highlight),
       mostPopularGames: gamesMapper(sections!.popularGames!.games),
-      upcomingGamesTitle: sections?.upComingGames?.title,
+      upcomingGamesTitle: sections?.upcomingGames?.title,
       upcomingGames: gamesMapper(upcomingGames),
-      upcomingHighlight: highlightMapper(sections?.upComingGames?.highlight),
+      upcomingHighlight: highlightMapper(sections?.upcomingGames?.highlight),
       freeGamesTitle: sections?.freeGames?.title,
       freeGames: gamesMapper(freeGames),
       freeHighlight: highlightMapper(sections?.freeGames?.highlight)

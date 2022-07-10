@@ -616,7 +616,7 @@ type Home {
   created_at: DateTime!
   updated_at: DateTime!
   newGames: ComponentPageSection
-  upComingGames: ComponentPageSection
+  upcomingGames: ComponentPageSection
   freeGames: ComponentPageSection
   popularGames: ComponentPagePopularGames
   published_at: DateTime
@@ -624,7 +624,7 @@ type Home {
 
 input HomeInput {
   newGames: ComponentPageSectionInput
-  upComingGames: ComponentPageSectionInput
+  upcomingGames: ComponentPageSectionInput
   freeGames: ComponentPageSectionInput
   popularGames: ComponentPagePopularGameInput
   published_at: DateTime
@@ -634,7 +634,7 @@ input HomeInput {
 
 input editHomeInput {
   newGames: editComponentPageSectionInput
-  upComingGames: editComponentPageSectionInput
+  upcomingGames: editComponentPageSectionInput
   freeGames: editComponentPageSectionInput
   popularGames: editComponentPagePopularGameInput
   published_at: DateTime

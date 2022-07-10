@@ -238,7 +238,7 @@ exports[`<GameInfo /> should render with Title, Banner and description 1`] = `
     class="c2 c3"
     color="secondary"
   >
-    R$100.00
+    $100.00
   </div>
   <p
     class="c4"

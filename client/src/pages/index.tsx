@@ -1,5 +1,5 @@
 import Home, { HomeTemplateProps } from 'templates/Home'
-import { initializeApollo } from 'utils/tests/apollo'
+import { initializeApollo } from 'utils/apollo'
 import { QueryHome, QueryHomeVariables } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
 import { bannerMapper, gamesMapper, highlightMapper } from 'utils/mappers'

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { lighten, darken } from 'polished'
+import { darken } from 'polished'
 
 import * as TextFieldStyles from 'components/TextField/styles'
 import * as ButtonStyles from 'components/Button/styles'

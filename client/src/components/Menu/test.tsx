@@ -1,11 +1,10 @@
-import { fireEvent, screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
+import { render, screen, fireEvent } from 'utils/test-utils'
 
 import Menu from '.'
 
 describe('<Menu />', () => {
   it('should render the menu', () => {
-    renderWithTheme(<Menu />)
+    render(<Menu />)
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
     expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
@@ -14,7 +13,7 @@ describe('<Menu />', () => {
   })
 
   it('should handle de open/close mobile menu', () => {
-    renderWithTheme(<Menu />)
+    render(<Menu />)
 
     const menuFullElement = screen.getByRole('navigation', { hidden: true })
 
@@ -37,7 +36,7 @@ describe('<Menu />', () => {
   })
 
   it('should show RegisterBox on user is logged', () => {
-    renderWithTheme(<Menu username="henrique" />)
+    render(<Menu username="henrique" />)
 
     expect(screen.getByText(/My profile/i)).toBeInTheDocument()
     expect(screen.getByText(/Wishlist/i)).toBeInTheDocument()
@@ -47,7 +46,7 @@ describe('<Menu />', () => {
   })
 
   it('should handle show/hide buttons depending on username', () => {
-    renderWithTheme(<Menu />)
+    render(<Menu />)
 
     expect(screen.getAllByText(/Sign in/i)).toHaveLength(2)
     expect(screen.getByText(/Sign Up/i)).toBeInTheDocument()

@@ -1,6 +1,5 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from 'utils/test-utils'
 import theme from 'styles/theme'
-import { renderWithTheme } from 'utils/tests/helpers'
 
 import GameCard from '.'
 
@@ -14,7 +13,7 @@ const props = {
 
 describe('<GameCard />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<GameCard {...props} />)
+    const { container } = render(<GameCard {...props} />)
 
     expect(screen.getByRole('img')).toBeInTheDocument()
     expect(screen.getByRole('img')).toHaveAttribute('src', props.img)
@@ -34,7 +33,7 @@ describe('<GameCard />', () => {
   })
 
   it('should render GameCard without promotional price', () => {
-    renderWithTheme(<GameCard {...props} />)
+    render(<GameCard {...props} />)
 
     const priceElement = screen.getByText('$235.00')
 
@@ -48,7 +47,7 @@ describe('<GameCard />', () => {
     })
   })
   it('should render GameCard with promotional price', () => {
-    renderWithTheme(<GameCard {...props} promotionalPrice={200} />)
+    render(<GameCard {...props} promotionalPrice={200} />)
 
     const priceElement = screen.getByText('$235.00')
     const promotionalPriceElement = screen.getByText('$200.00')
@@ -66,18 +65,18 @@ describe('<GameCard />', () => {
   })
 
   it('should render GameCard with filled FavIcon when favorite is true', () => {
-    renderWithTheme(<GameCard {...props} favorite />)
+    render(<GameCard {...props} favorite />)
     expect(screen.getByLabelText(/Remove from wishlist/i)).toBeInTheDocument()
   })
 
   it('should render GameCard with filled FavIcon when favorite is false', () => {
-    renderWithTheme(<GameCard {...props} />)
+    render(<GameCard {...props} />)
     expect(screen.getByLabelText(/Add to wishlist/i)).toBeInTheDocument()
   })
 
   it('should call onFav method when favorite is clicked', () => {
     const onFav = jest.fn()
-    renderWithTheme(<GameCard {...props} favorite onFav={onFav} />)
+    render(<GameCard {...props} favorite onFav={onFav} />)
 
     const buttonFavElement = screen.getAllByRole('button')[0]
 
@@ -87,7 +86,7 @@ describe('<GameCard />', () => {
   })
 
   it('should render GameCard with Ribbon', () => {
-    renderWithTheme(
+    render(
       <GameCard
         {...props}
         ribbon="My Ribbon"

@@ -4,6 +4,7 @@ import theme from 'styles/theme'
 import GameCard from '.'
 
 const props = {
+  id: '1',
   slug: 'game-title',
   img: '/image',
   title: 'Game Title',

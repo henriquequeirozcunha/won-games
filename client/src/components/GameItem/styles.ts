@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 
 export const GameContent = styled.div`
   display: flex;
+  width: 100%;
 `
 
 export const ImageBox = styled.div`
@@ -38,6 +39,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 `
 
 export const Title = styled.h3`
@@ -62,6 +64,21 @@ export const Price = styled.div`
     border-radius: ${theme.border.radius};
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.bold};
+  `}
+`
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const Remove = styled.div`
+  ${({ theme }) => css`
+    cursor: pointer;
+    color: ${theme.colors.primary};
+    font-size: ${theme.font.sizes.small};
   `}
 `
 export const DownloadLink = styled.a`

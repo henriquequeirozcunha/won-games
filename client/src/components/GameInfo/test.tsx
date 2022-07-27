@@ -3,6 +3,7 @@ import { render, screen } from 'utils/test-utils'
 import GameInfo from '.'
 
 const props = {
+  id: '1',
   title: 'Game Title',
   price: 100,
   description: 'Game description'
@@ -30,7 +31,7 @@ describe('<GameInfo />', () => {
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('button', { name: /add to chart/i })
+      screen.getByRole('button', { name: /add to cart/i })
     ).toBeInTheDocument()
   })
 })

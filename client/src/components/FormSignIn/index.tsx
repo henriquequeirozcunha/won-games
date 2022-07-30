@@ -6,11 +6,12 @@ import Link from 'next/link'
 import { Email, Lock } from 'styled-icons/material-outlined'
 import * as S from './styles'
 
-import { FormWrapper, FormLink } from 'components/Form'
+import { FormWrapper, FormLink, FormLoading } from 'components/Form'
 import { useRouter } from 'next/router'
 
 const FormSignIn = () => {
   const [values, setValues] = useState({})
+  const [loading, setLoading] = useState(false)
   const { push } = useRouter()
 
   const handleInput = (field: string, value: string) => {
@@ -19,6 +20,8 @@ const FormSignIn = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    setLoading(true)
 
     const result = await signIn('credentials', {
       ...values,
@@ -29,6 +32,8 @@ const FormSignIn = () => {
     if (result?.url) {
       return push(result.url)
     }
+
+    setLoading(false)
 
     console.error('dados invalidos')
   }
@@ -53,8 +58,8 @@ const FormSignIn = () => {
 
         <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
 
-        <Button type="submit" size="large" fullWidth>
-          Sign in now
+        <Button disabled={loading} type="submit" size="large" fullWidth>
+          {loading ? <FormLoading /> : <span>Sign in now</span>}
         </Button>
 
         <FormLink>

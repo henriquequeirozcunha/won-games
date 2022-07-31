@@ -15,9 +15,10 @@ import UserDropdown from 'components/UserDropdown'
 
 export type MenuProps = {
   username?: string | null
+  loading?: boolean
 }
 
-const Menu = ({ username }: MenuProps) => {
+const Menu = ({ username, loading }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -48,6 +49,7 @@ const Menu = ({ username }: MenuProps) => {
         </S.MenuNav>
       </MediaMatch>
 
+      {!loading && ( <>
       <S.MenuGroup>
         <S.IconWrapper>
           <SearchOutlineIcon aria-label="Search" />
@@ -116,6 +118,7 @@ const Menu = ({ username }: MenuProps) => {
           </S.RegisterBox>
         )}
       </S.MenuFull>
+      </>)}
     </S.Wrapper>
   )
 }

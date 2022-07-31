@@ -22,6 +22,7 @@ export const Link = styled.a`
     display: flex;
     align-items: center;
     text-decoration: none;
+    cursor: pointer;
     background: ${theme.colors.white};
     color: ${theme.colors.black};
     padding: ${theme.spacings.xsmall} ${theme.spacings.small};

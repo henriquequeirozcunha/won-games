@@ -22,7 +22,7 @@ const options: NextAuthOptions = {
         const data = await response.json()
 
         if (data.user) {
-          return { ...data.user, jwt: data.jwt }
+          return { ...data.user, jwt: data.jwt, name: data.user.username }
         } else {
           return null
         }

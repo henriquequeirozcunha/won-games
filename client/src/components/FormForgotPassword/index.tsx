@@ -14,16 +14,14 @@ import {
   FormSuccess
 } from 'components/Form'
 import { FieldErrors, forgotValidate } from 'utils/validations'
-
-const defaultValues = {
-  email: ''
-}
+import { useRouter } from 'next/router'
 
 const FormForgotPassword = () => {
+  const { query } = useRouter()
   const [success, setSuccess] = useState(false)
   const [formError, setFormError] = useState('')
   const [fieldError, setFieldError] = useState<FieldErrors>({})
-  const [values, setValues] = useState(defaultValues)
+  const [values, setValues] = useState({ email: (query.email as string) || '' })
   const [loading, setLoading] = useState(false)
 
   const handleInput = (field: string, value: string) => {
@@ -87,6 +85,7 @@ const FormForgotPassword = () => {
               placeholder="Email"
               type="email"
               error={fieldError?.email}
+              initialValue={query.email as string}
               onInputChange={(v) => handleInput('email', v)}
               icon={<Email />}
             />

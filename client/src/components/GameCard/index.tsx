@@ -9,7 +9,7 @@ import CartButton from 'components/CartButton'
 export type GameCardProps = {
   id: string
   slug: string
-  img: string
+  img: string | undefined
   title: string
   developer: string
   price: number

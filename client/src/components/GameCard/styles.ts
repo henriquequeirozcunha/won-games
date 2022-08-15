@@ -58,7 +58,7 @@ export const FavButton = styled.div`
   ${({ theme }) => css`
     position: absolute;
     color: ${theme.colors.primary};
-    right: 0;
+    right: -1rem;
     cursor: pointer;
     top: 0;
 

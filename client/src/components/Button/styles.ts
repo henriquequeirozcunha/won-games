@@ -64,6 +64,10 @@ export const Wrapper = styled.button<WrapperProps>`
     text-decoration: none;
     font-family: ${theme.font.family};
 
+    &:focus {
+      outline: 1px dashed;
+    }
+
     &:hover {
       background: ${minimal
         ? 'none'

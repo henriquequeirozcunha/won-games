@@ -14,18 +14,20 @@ const WishlistButton = ({
   size = 'small'
 }: WishlistButtonProps) => {
   const { data: session } = useSession()
-  const { isInWishlist } = useWishlist()
+  const { isInWishlist, addToWishlist, removeFromWishlist } = useWishlist()
 
-  const ButtonText = isInWishlist(id)
-    ? 'Remove from wishlist'
-    : 'Add to wishlist'
+  const inWishlist = isInWishlist(id)
+  const ButtonText = inWishlist ? 'Remove from wishlist' : 'Add to wishlist'
+
+  const handleClick = () =>
+    inWishlist ? removeFromWishlist(id) : addToWishlist(id)
 
   if (!session) return null
 
   return (
     <Button
       icon={
-        isInWishlist(id) ? (
+        inWishlist ? (
           <Favorite aria-label={ButtonText} />
         ) : (
           <FavoriteBorder aria-label={ButtonText} />
@@ -33,6 +35,7 @@ const WishlistButton = ({
       }
       minimal
       size={size}
+      onClick={handleClick}
     >
       {hasText && ButtonText}
     </Button>

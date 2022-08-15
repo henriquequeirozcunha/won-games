@@ -1,5 +1,6 @@
 import { WishlistContextDefaultValues } from 'hooks/use-wishlist'
-import { render, screen } from 'utils/test-utils'
+import { act } from 'react-dom/test-utils'
+import { render, screen, fireEvent } from 'utils/test-utils'
 import WishlistButton from '.'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -12,53 +13,45 @@ useSession.mockImplementation(() => {
 
 describe('<WishlistButton />', () => {
   it('should render button to add to wishlist if item is not in cart', () => {
-    const wishlistDefaultValues = {
+    const wishListProviderProps = {
       ...WishlistContextDefaultValues,
       isInWishlist: () => false
     }
 
-    render(<WishlistButton id="1" />, {
-      wishListProviderProps: wishlistDefaultValues
-    })
+    render(<WishlistButton id="1" />, { wishListProviderProps })
 
     expect(screen.getByLabelText(/Add to wishlist/i)).toBeInTheDocument()
   })
 
   it('should render button to remove from wishlist if item is in cart', () => {
-    const wishlistDefaultValues = {
+    const wishListProviderProps = {
       ...WishlistContextDefaultValues,
       isInWishlist: () => true
     }
 
-    render(<WishlistButton id="1" />, {
-      wishListProviderProps: wishlistDefaultValues
-    })
+    render(<WishlistButton id="1" />, { wishListProviderProps })
 
     expect(screen.getByLabelText(/Remove from wishlist/i)).toBeInTheDocument()
   })
 
   it('should render button with text to add to wishlist if item is not in wishlist', () => {
-    const wishlistDefaultValues = {
+    const wishListProviderProps = {
       ...WishlistContextDefaultValues,
       isInWishlist: () => false
     }
 
-    render(<WishlistButton id="1" hasText />, {
-      wishListProviderProps: wishlistDefaultValues
-    })
+    render(<WishlistButton id="1" hasText />, { wishListProviderProps })
 
     expect(screen.getByText(/Add to wishlist/i)).toBeInTheDocument()
   })
 
   it('should render button with text to remove from wishlist if item is in wishlist', () => {
-    const wishlistDefaultValues = {
+    const wishListProviderProps = {
       ...WishlistContextDefaultValues,
       isInWishlist: () => true
     }
 
-    render(<WishlistButton id="1" hasText />, {
-      wishListProviderProps: wishlistDefaultValues
-    })
+    render(<WishlistButton id="1" hasText />, { wishListProviderProps })
 
     expect(screen.getByText(/Remove from wishlist/i)).toBeInTheDocument()
   })
@@ -68,15 +61,47 @@ describe('<WishlistButton />', () => {
       return { data: null }
     })
 
-    const wishlistDefaultValues = {
+    const wishListProviderProps = {
       ...WishlistContextDefaultValues,
       isInWishlist: () => true
     }
 
-    render(<WishlistButton id="1" hasText />, {
-      wishListProviderProps: wishlistDefaultValues
-    })
+    render(<WishlistButton id="1" hasText />, { wishListProviderProps })
 
     expect(screen.queryByText(/Remove from wishlist/i)).not.toBeInTheDocument()
+  })
+
+  it('should add to wishlist', () => {
+    const wishListProviderProps = {
+      ...WishlistContextDefaultValues,
+      isInWishlist: () => false,
+      addToWishlist: jest.fn()
+    }
+
+    render(<WishlistButton id="1" hasText />, { wishListProviderProps })
+
+    act(() => {
+      fireEvent.click(screen.getByText(/Add to wishlist/i))
+    })
+
+    expect(wishListProviderProps.addToWishlist).toHaveBeenCalled()
+    expect(wishListProviderProps.addToWishlist).toHaveBeenCalledWith('1')
+  })
+
+  it('should remove from wishlist', () => {
+    const wishListProviderProps = {
+      ...WishlistContextDefaultValues,
+      isInWishlist: () => true,
+      removeFromWishlist: jest.fn()
+    }
+
+    render(<WishlistButton id="1" hasText />, { wishListProviderProps })
+
+    act(() => {
+      fireEvent.click(screen.getByText(/Remove from wishlist/i))
+    })
+
+    expect(wishListProviderProps.removeFromWishlist).toHaveBeenCalled()
+    expect(wishListProviderProps.removeFromWishlist).toHaveBeenCalledWith('1')
   })
 })

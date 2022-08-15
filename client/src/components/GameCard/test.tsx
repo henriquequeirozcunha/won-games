@@ -1,3 +1,4 @@
+import 'session.mock'
 import { render, screen, fireEvent } from 'utils/test-utils'
 import theme from 'styles/theme'
 
@@ -65,25 +66,9 @@ describe('<GameCard />', () => {
     })
   })
 
-  it('should render GameCard with filled FavIcon when favorite is true', () => {
-    render(<GameCard {...props} favorite />)
-    expect(screen.getByLabelText(/Remove from wishlist/i)).toBeInTheDocument()
-  })
-
   it('should render GameCard with filled FavIcon when favorite is false', () => {
     render(<GameCard {...props} />)
     expect(screen.getByLabelText(/Add to wishlist/i)).toBeInTheDocument()
-  })
-
-  it('should call onFav method when favorite is clicked', () => {
-    const onFav = jest.fn()
-    render(<GameCard {...props} favorite onFav={onFav} />)
-
-    const buttonFavElement = screen.getAllByRole('button')[0]
-
-    fireEvent.click(buttonFavElement)
-
-    expect(onFav).toBeCalled()
   })
 
   it('should render GameCard with Ribbon', () => {

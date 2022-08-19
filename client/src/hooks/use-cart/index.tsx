@@ -6,7 +6,7 @@ import { cartMapper } from 'utils/mappers'
 
 const CART_KEY = 'cartItems'
 
-type CarItem = {
+export type CartItem = {
   id: string
   img: string
   title: string
@@ -14,7 +14,7 @@ type CarItem = {
 }
 
 export type CartContextData = {
-  items: CarItem[]
+  items: CartItem[]
   quantity: number
   total: string
   isInCart: (id: string) => boolean

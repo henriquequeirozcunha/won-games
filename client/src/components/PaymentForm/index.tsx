@@ -12,6 +12,7 @@ import { useCart } from 'hooks/use-cart'
 import { createPaymentIntent } from 'utils/stripe/methods'
 import { Session } from 'next-auth'
 import { FormLoading } from 'components/Form'
+import { useRouter } from 'next/router'
 
 type PaymentForm = {
   session: Session
@@ -19,6 +20,7 @@ type PaymentForm = {
 
 const PaymentForm = ({ session }: PaymentForm) => {
   const { items } = useCart()
+  const { push } = useRouter()
   const stripe = useStripe()
   const elements = useElements()
   const [error, setError] = useState<string | null>(null)
@@ -62,6 +64,11 @@ const PaymentForm = ({ session }: PaymentForm) => {
     event.preventDefault()
     setLoading(true)
 
+    if (freeGames) {
+      push('/success')
+      return
+    }
+
     const payload = await stripe!.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements!.getElement(CardElement)!
@@ -71,6 +78,8 @@ const PaymentForm = ({ session }: PaymentForm) => {
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`)
       setLoading(false)
+
+      push('/success')
     } else {
       setError(null)
       setLoading(false)

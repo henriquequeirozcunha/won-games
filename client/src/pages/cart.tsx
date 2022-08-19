@@ -1,7 +1,5 @@
 import Cart, { CartTemplateProps } from 'templates/Cart'
 
-import itemsMock from 'components/CartList/mock'
-import cardsMock from 'components/PaymentOptions/mock'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
 import { initializeApollo } from 'utils/apollo'
@@ -29,9 +27,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       recommendedHighlight: highlightMapper(
         data.recommended?.section?.highlight
       ),
-      items: itemsMock,
-      total: 'R$ 430,00',
-      cards: cardsMock
+      total: 'R$ 430,00'
     }
   }
 }

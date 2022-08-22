@@ -1,6 +1,6 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { ShoppingCart } from '@styled-icons/material-outlined'
-import { StripeCardElementChangeEvent } from '@stripe/stripe-js'
+import { PaymentIntent, StripeCardElementChangeEvent } from '@stripe/stripe-js'
 
 import Button from 'components/Button'
 import Heading from 'components/Heading'
@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react'
 import * as S from './styles'
 import { ErrorOutline } from 'styled-icons/material-outlined'
 import { useCart } from 'hooks/use-cart'
-import { createPaymentIntent } from 'utils/stripe/methods'
+import { createPaymentIntent, createPayment } from 'utils/stripe/methods'
 import { Session } from 'next-auth'
 import { FormLoading } from 'components/Form'
 import { useRouter } from 'next/router'
@@ -60,11 +60,22 @@ const PaymentForm = ({ session }: PaymentForm) => {
     setError(event.error ? event.error.message : '')
   }
 
+  const saveOrder = async (paymentIntent?: PaymentIntent) => {
+    const data = await createPayment({
+      items,
+      paymentIntent,
+      token: session.jwt as string
+    })
+
+    return data
+  }
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
     setLoading(true)
 
     if (freeGames) {
+      saveOrder()
       push('/success')
       return
     }
@@ -78,11 +89,12 @@ const PaymentForm = ({ session }: PaymentForm) => {
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`)
       setLoading(false)
-
-      push('/success')
     } else {
       setError(null)
       setLoading(false)
+
+      saveOrder(payload.paymentIntent)
+      push('/success')
     }
   }
 

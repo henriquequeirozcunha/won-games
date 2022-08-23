@@ -13,6 +13,7 @@ import { createPaymentIntent, createPayment } from 'utils/stripe/methods'
 import { Session } from 'next-auth'
 import { FormLoading } from 'components/Form'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 type PaymentForm = {
   session: Session
@@ -126,9 +127,11 @@ const PaymentForm = ({ session }: PaymentForm) => {
           )}
         </S.Body>
         <S.Footer>
-          <Button as="a" fullWidth minimal>
-            Continue shopping
-          </Button>
+          <Link href="/" passHref>
+            <Button as="a" fullWidth minimal>
+              Continue shopping
+            </Button>
+          </Link>
           <Button
             fullWidth
             icon={loading ? <FormLoading /> : <ShoppingCart />}

@@ -11,6 +11,9 @@ import { useApollo } from 'utils/apollo'
 import { CartProvider } from 'hooks/use-cart'
 import { WishlistProvider } from 'hooks/use-wishlist'
 
+import { DefaultSeo } from 'next-seo'
+import SEO from '../../next-seo.config'
+
 function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApolloState)
 
@@ -28,6 +31,7 @@ function App({ Component, pageProps }: AppProps) {
                 <meta name="theme-color" content="#06092B" />
                 <meta name="description" content="Won Games Project" />
               </Head>
+              <DefaultSeo {...SEO} />
               <GlobalStyles />
               <NextNProgress
                 color="#F231A5"

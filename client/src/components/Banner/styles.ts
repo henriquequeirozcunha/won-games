@@ -20,12 +20,10 @@ export const Wrapper = styled.main`
 `}
 `
 
-export const Image = styled.div<ImageProps>`
-  ${({ theme, src }) => css`
-    background-color: rgba(${theme.colors.lightGray});
-    background-image: url(${src});
-    background-position: center;
-    background-size: cover;
+export const ImageWrapper = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+    background-color: ${theme.colors.lightGray};
     width: 100%;
     height: 23rem;
 

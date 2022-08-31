@@ -38,3 +38,7 @@ storybook-static
 
 node_modules
 .next
+
+# cypress
+cypress/screenshots
+cypress/videos

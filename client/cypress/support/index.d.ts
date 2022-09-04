@@ -66,5 +66,11 @@ declare namespace Cypress {
      * @example cy.signUp(user)
      */
     signUp(user: User): Chainable<Element>
+
+    /**
+     * Custom command to sign up
+     * @example cy.signIn()
+     */
+    signIn(email?: string, password?: string): Chainable<Element>
   }
 }

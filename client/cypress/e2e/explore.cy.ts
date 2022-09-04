@@ -45,6 +45,8 @@ describe('Explore Page', () => {
       .first()
       .within(() => {
         cy.findByText('FREE').should('not.exist')
+
+        cy.shouldBeGreaterThan(0)
       })
   })
 })

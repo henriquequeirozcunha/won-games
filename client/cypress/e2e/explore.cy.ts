@@ -58,7 +58,7 @@ describe('Explore Page', () => {
     cy.getByDataCy('game-card')
       .first()
       .within(() => {
-        cy.findByText('$0.00').should('exist')
+        cy.findByText('FREE').should('exist')
       })
 
     cy.findByText('Under $50').click()

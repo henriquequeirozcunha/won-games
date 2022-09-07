@@ -3,7 +3,7 @@ name: api-ci
 on:
   push:
     branches:
-      - 'master',
+      - 'master'
       - 'ci/**'
 
 jobs:

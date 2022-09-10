@@ -9,13 +9,21 @@ const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: 'Sign-In',
-      credentials: {},
-      async authorize({ email, password }) {
+      credentials: {
+        email: {},
+        password: {}
+      },
+      async authorize(credentials) {
+        if (!credentials) return null
+
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/auth/local`,
           {
             method: 'POST',
-            body: new URLSearchParams({ identifier: email, password })
+            body: new URLSearchParams({
+              identifier: credentials.email,
+              password: credentials.password
+            })
           }
         )
 

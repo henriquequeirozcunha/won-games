@@ -16,7 +16,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 type PaymentForm = {
-  session: Session
+  session?: Session
 }
 
 const PaymentForm = ({ session }: PaymentForm) => {
@@ -65,7 +65,7 @@ const PaymentForm = ({ session }: PaymentForm) => {
     const data = await createPayment({
       items,
       paymentIntent,
-      token: session.jwt as string
+      token: session?.jwt as string
     })
 
     return data

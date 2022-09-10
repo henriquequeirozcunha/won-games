@@ -15,7 +15,7 @@ import * as S from './styles'
 import { Session } from 'next-auth'
 
 export type CartTemplateProps = {
-  session: Session
+  session?: Session
   recommendedTitle: string
   recommendedGames: GameCardProps[]
   recommendedHighlight: HighlightProps

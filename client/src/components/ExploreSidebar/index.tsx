@@ -3,12 +3,12 @@ import xor from 'lodash.xor'
 import { Close } from '@styled-icons/material-outlined/Close'
 import { FilterList } from '@styled-icons/material-outlined/FilterList'
 
+import * as S from './styles'
 import Heading from 'components/Heading'
 import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
 import Radio from 'components/Radio'
 
-import * as S from './styles'
 import { ParsedUrlQueryInput } from 'querystring'
 
 export type ItemProps = {

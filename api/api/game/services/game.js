@@ -36,7 +36,7 @@ const getGameInfo = async (slug) => {
             .getAttribute("xlink:href")
             .replace(/_/g, "")
             .replace(/[^\w-]+/g, "")
-        : "FREE",
+        : "BR0",
       short_description: description.textContent.trim().slice(0, 160),
       description: description.innerHTML,
     };

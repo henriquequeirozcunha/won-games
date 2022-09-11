@@ -42,6 +42,7 @@
     "rating": {
       "type": "enumeration",
       "enum": [
+        "FREE",
         "BR0",
         "BR10",
         "BR12",

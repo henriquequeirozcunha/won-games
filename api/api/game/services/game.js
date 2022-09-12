@@ -31,12 +31,7 @@ const getGameInfo = async (slug) => {
     const description = dom.window.document.querySelector(".description");
 
     return {
-      rating: ratingElement
-        ? ratingElement
-            .getAttribute("xlink:href")
-            .replace(/_/g, "")
-            .replace(/[^\w-]+/g, "")
-        : "BR0",
+      rating: "BR0",
       short_description: description.textContent.trim().slice(0, 160),
       description: description.innerHTML,
     };
